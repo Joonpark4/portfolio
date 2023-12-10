@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 
 export const metadata: Metadata = {
@@ -14,7 +15,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex min-h-screen items-center justify-center p-24`}>
+      <body className={`flex h-screen items-center justify-center p-24`}>
+        <Navbar />
           {children}
       </body>
     </html>

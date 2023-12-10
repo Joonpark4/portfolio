@@ -1,0 +1,10 @@
+.nav-button {
+  background-size: 210% auto;
+  background-image: linear-gradient(to right, #e0e0e0 50%, #fff 50%);
+  transition: background-position 200ms ease-in-out;
+  background-position: right center;
+}
+
+.nav-button:hover {
+  background-position: left center;
+}
