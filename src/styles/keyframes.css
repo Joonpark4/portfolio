@@ -1,10 +1,31 @@
 .nav-button {
   background-size: 210% auto;
-  background-image: linear-gradient(to right, #e0e0e0 50%, #fff 50%);
+  background-image: linear-gradient(to right, #e0e0e0 50%, var(--background) 50%);
   transition: background-position 200ms ease-in-out;
   background-position: right center;
 }
 
 .nav-button:hover {
   background-position: left center;
+}
+
+@keyframes neon {
+  0% {
+    filter: drop-shadow(0 0 0.00rem var(--foreground));
+  }
+  20% {
+    filter: drop-shadow(0 0 0.05rem  var(--foreground));
+  }
+  40% {
+    filter: drop-shadow(0 0 0.00rem var(--foreground));
+  }
+  60% {
+    filter: drop-shadow(0 0 0.05rem var(--foreground));
+  }
+  80% {
+    filter: drop-shadow(0 0 0.00rem var(--foreground));
+  }
+  100% {
+    filter: drop-shadow(0 0 0.00rem var(--foreground));
+  }
 }

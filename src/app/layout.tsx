@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import Navbar from "@/components/layout/Navbar";
+import Sidebar from "@/components/layout/Sidebar";
+import { Noto_Sans_KR } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
 
+const Noto = Noto_Sans_KR({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`flex h-screen items-center justify-center p-24`}>
-        <Navbar />
+      <body
+        className={`flex h-screen items-center justify-center p-6 gap-3 ${Noto.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
+          <Sidebar />
           {children}
+        </ThemeProvider>
       </body>
     </html>
   );
