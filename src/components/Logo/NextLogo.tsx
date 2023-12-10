@@ -3,15 +3,23 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import logoBlack from "@/../public/img/nextLogoBlack.png";
 import logoWhite from "@/../public/img/nextLogoWhite.png";
+import { useEffect, useState } from "react";
 
 export default function NextLogo() {
   const { resolvedTheme } = useTheme();
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (resolvedTheme) {
+      setIsDark(resolvedTheme === "dark");
+    }
+  }, [resolvedTheme]);
 
   return (
     <div className="text-xs w-full flex justify-end items-center mt-4 gap-1">
       <div>Powered by</div>
 
-      {resolvedTheme === "dark" ? (
+      {isDark ? (
         // 다크모드일 때 렌더링
         <Image
           src={logoWhite}
