@@ -5,13 +5,13 @@ import logoBlack from "@/../public/img/nextLogoBlack.png";
 import logoWhite from "@/../public/img/nextLogoWhite.png";
 
 export default function NextLogo() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   return (
     <div className="text-xs w-full flex justify-end items-center mt-4 gap-1">
       <div>Powered by</div>
 
-      {theme === "dark" ? (
+      {resolvedTheme === "dark" ? (
         // 다크모드일 때 렌더링
         <Image
           src={logoWhite}
