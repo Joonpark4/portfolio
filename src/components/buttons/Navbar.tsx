@@ -10,11 +10,7 @@ const buttons = [
     link: "/",
   },
   {
-    text: "Skill Stacks",
-    link: "/",
-  },
-  {
-    text: "Load Map",
+    text: "Tech Skills",
     link: "/",
   },
   {

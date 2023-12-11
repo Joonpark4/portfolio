@@ -22,7 +22,7 @@ export default function DarkToggle() {
 
   return (
     <div
-      className="flex gap-3 items-center cursor-pointer"
+      className=" self-stretch flex gap-3 items-center justify-center cursor-pointer"
       onClick={toggleTheme}>
       <Sun className="h-[1.2rem] w-[1.2rem]" />
       <Switch
