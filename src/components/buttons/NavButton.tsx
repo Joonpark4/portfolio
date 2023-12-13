@@ -9,6 +9,7 @@ const buttonVariants = cva("", {
     variant: {
       default:
         "nav-button self-stretch border-b-[1px] border-solid border-coolgray-10 px-3 py-2 mx-2",
+      selected: "self-stretch bg-border px-3 py-2 mx-2",
     },
   },
   defaultVariants: {
