@@ -1,35 +1,35 @@
+'use client'
 import { Button } from "@/components/buttons/NavButton";
-import Link from "next/link";
+import { usePageStore } from "@/store/pagenation";
 const buttons = [
   {
     text: "About Me",
-    link: "/",
     variant: "selected",
   },
   {
     text: "Portfolio",
-    link: "/",
   },
   {
     text: "Tech Skills",
-    link: "/",
   },
   {
     text: "Contact",
-    link: "/",
   },
 ];
 export default function Navbar() {
+  const pageTo = usePageStore((state) => state.pageTo);
+
   return (
     <nav className="self-stretch h-80 flex flex-col items-start justify-start text-coolgray-90 mt-3 gap-5">
       {buttons.map((button, index) => (
         <Button
-          asChild
           key={index}
           variant={
             (button.variant as "selected") || "default" || null || undefined
-          }>
-          <Link href={button.link}>{button.text}</Link>
+          }
+          onClick={() => pageTo(index)}
+          >
+          {button.text}
         </Button>
       ))}
     </nav>
