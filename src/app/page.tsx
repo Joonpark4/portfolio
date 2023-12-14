@@ -13,21 +13,18 @@ export default function Home() {
   SwiperCore.use([Pagination, Mousewheel, A11y]);
   const swiperRef = useRef<SwiperRef>(null);
   const sections = ["first", "second", "third", "fourth", "fifth"];
+  const setPageIndex = usePageStore((state) => state.setPageIndex);
 
   return (
     <main className="w-full h-full max-w-[1200px] border overflow-hidden">
       <Swiper
         onSwiper={setSwiper}
+        onSlideChange={(swiper) => setPageIndex(swiper.activeIndex)}
         ref={swiperRef}
         style={{ height: "100%" }}
         direction="vertical"
         slidesPerView={1}
         mousewheel={true}
-        pagination={{
-          el: ".swiper-pagination",
-          type: "bullets",
-          clickable: true,
-        }}
         className="mySwiper">
         {sections.map((section, index) => (
           <SwiperSlide key={index}>
@@ -36,7 +33,6 @@ export default function Home() {
             </section>
           </SwiperSlide>
         ))}
-        <div className="swiper-pagination"></div>
       </Swiper>
     </main>
   );
