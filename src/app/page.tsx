@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Pagination, Mousewheel, A11y } from "swiper/modules";
@@ -9,10 +9,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Home() {
-  const setSwiper = usePageStore((state) => state.setSwiper);
   SwiperCore.use([Pagination, Mousewheel, A11y]);
   const swiperRef = useRef<SwiperRef>(null);
   const sections = ["first", "second", "third", "fourth", "fifth"];
+  const setSwiper = usePageStore((state) => state.setSwiper);
   const setPageIndex = usePageStore((state) => state.setPageIndex);
 
   return (
@@ -25,6 +25,7 @@ export default function Home() {
         direction="vertical"
         slidesPerView={1}
         mousewheel={true}
+        loop={true}
         className="mySwiper">
         {sections.map((section, index) => (
           <SwiperSlide key={index}>
