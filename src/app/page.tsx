@@ -30,7 +30,7 @@ export default function Home() {
         {sections.map((section, index) => (
           <SwiperSlide key={index}>
             <section className="w-full min-h-full p-10">
-              it's {section} section.
+              it is {section} section.
             </section>
           </SwiperSlide>
         ))}
