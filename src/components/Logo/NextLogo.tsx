@@ -16,7 +16,7 @@ export default function NextLogo() {
   }, [resolvedTheme]);
 
   return (
-    <div className="text-xs w-full flex justify-end items-center mt-4 gap-1">
+    <div className="self-stretch text-xs w-full flex justify-center items-center mt-4 gap-1">
       <div>Powered by</div>
 
       {isDark ? (
