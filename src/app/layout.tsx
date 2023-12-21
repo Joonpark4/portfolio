@@ -3,6 +3,8 @@ import "@/styles/globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import { Noto_Sans_KR } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -22,13 +24,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex h-screen items-center justify-center p-4 gap-1 ${Noto.className}`}>
+        className={`flex h-screen items-center justify-center p-4 gap-1 flex-col ${Noto.className} sm:flex-row`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange>
-          <Sidebar />{children}
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          <Header />
+          <Sidebar />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

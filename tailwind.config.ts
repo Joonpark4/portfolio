@@ -71,6 +71,10 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         neon: "neon 3000ms ease-in-out infinite",
       },
+      boxShadow: {
+        'up': '0 -2px 3px rgba(0, 0, 0, 0.5)',
+        'inside': '-3px -3px 2px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

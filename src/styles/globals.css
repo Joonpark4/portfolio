@@ -7,12 +7,12 @@
 html {
   /* phone: 0~480px */
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   /* laptop: 481~1280px */
   @media (min-width: 481px) and (max-width: 1280px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   /* desktop: 1280px 이상 */
@@ -93,7 +93,7 @@ html {
   }
   body {
     @apply bg-background text-foreground;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
 }
 input:-webkit-autofill,
