@@ -14,7 +14,7 @@ export default function Header() {
   }, [theme]);
 
   return (
-    <header className={`z-50 w-full flex sm:hidden justify-center h-[10vh] px-10 border ${isDark && 'shadow-border'}`}>
+    <header className={`z-50 w-full flex sm:hidden justify-center h-[10vh] px-10 shadow-md ${isDark && 'shadow-border'}`}>
       <div className="w-full max-w-7xl flex justify-between items-center">
         Joon Park
         <DarkToggle />

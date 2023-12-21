@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`flex h-screen items-center justify-center p-4 gap-1 flex-col ${Noto.className} sm:flex-row`}>
+        className={`flex h-screen items-center justify-center sm:p-4 sm:gap-1 flex-col ${Noto.className} sm:flex-row`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

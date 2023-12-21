@@ -10,18 +10,20 @@ type State = {
   pageTo: (index: number) => void;
 };
 
-export const usePageStore = create<State>((set) => ({
+export const usePageStore = create<State>((set, get) => ({
   swiper: null,
   pages: ["About Me", "Portfolio", "Tech Stack", "Contact", "Diary"],
   pageIndex: 0,
   setSwiper: (swiper) => set({ swiper }),
   setPageIndex: (index) => {
     set({ pageIndex: index });
+    console.log(index);
   },
   pageTo: (index) => {
-    const { swiper } = usePageStore.getState();
+    const { swiper } = get();
     if (swiper) {
       swiper.slideTo(index);
+      console.log(index);
     }
   },
 }));

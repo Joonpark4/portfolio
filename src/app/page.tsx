@@ -16,7 +16,7 @@ export default function Home() {
   const setPageIndex = usePageStore((state) => state.setPageIndex);
 
   return (
-    <main className="w-full h-full flex-grow max-w-[1200px] border overflow-hidden">
+    <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden">
       <Swiper
         onSwiper={setSwiper}
         onSlideChange={(swiper) => {setPageIndex(swiper.realIndex)}}

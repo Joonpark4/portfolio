@@ -7,12 +7,12 @@
 html {
   /* phone: 0~480px */
   @media (max-width: 480px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   /* laptop: 481~1280px */
   @media (min-width: 481px) and (max-width: 1280px) {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   /* desktop: 1280px 이상 */
@@ -99,7 +99,6 @@ html {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: black;
-  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-  transition: background-color 5000s ease-in-out 0s;
+  background-color: inherit;
+  border-color: inherit;
 }
