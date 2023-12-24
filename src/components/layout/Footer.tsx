@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
-import { UserSquare2Icon, BoxesIcon, MailPlus, BookOpenTextIcon, AtomIcon } from 'lucide-react';
+import { UserSquare2Icon, BoxesIcon, MailPlus, BookOpenTextIcon, AtomIcon, MailCheckIcon } from 'lucide-react';
 import { usePageStore } from "@/store/pagenation";
 import { Button } from "@/components/buttons/Button";
 
