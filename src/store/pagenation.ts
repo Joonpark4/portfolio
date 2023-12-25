@@ -7,7 +7,6 @@ type State = {
   pageIndex: number;
   setSwiper: (swiper: Swiper) => void;
   setPageIndex: (index: number) => void;
-  pageTo: (index: number) => void;
 };
 
 export const usePageStore = create<State>((set, get) => ({
@@ -16,14 +15,11 @@ export const usePageStore = create<State>((set, get) => ({
   pageIndex: 0,
   setSwiper: (swiper) => set({ swiper }),
   setPageIndex: (index) => {
-    set({ pageIndex: index });
-    console.log(index);
-  },
-  pageTo: (index) => {
-    const { swiper } = get();
+    const { swiper } = get(); // 현재 Swiper 인스턴스 가져오기
+    set({ pageIndex: index }); // 페이지 인덱스 상태 업데이트
     if (swiper) {
-      swiper.slideTo(index);
-      console.log(index);
+      swiper.slideTo(index); // Swiper의 페이지 이동
+      console.log(swiper.activeIndex);
     }
-  },
+  }
 }));
