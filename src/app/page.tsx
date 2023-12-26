@@ -4,6 +4,7 @@ import SwiperCore from "swiper";
 import { Swiper, SwiperSlide, SwiperRef } from "swiper/react";
 import { Pagination, Mousewheel, A11y } from "swiper/modules";
 import { usePageStore } from "@/store/pagenation";
+import AboutMePage from "@/components/pages/AboutMe";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -28,9 +29,7 @@ export default function Home() {
         className="mySwiper">
         {pages.map((section, index) => (
           <SwiperSlide key={index}>
-            <section className="w-full min-h-full p-10">
-              it is {section} section.
-            </section>
+            <AboutMePage />
           </SwiperSlide>
         ))}
       </Swiper>
