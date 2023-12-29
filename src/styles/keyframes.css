@@ -30,21 +30,12 @@
 
 @keyframes neon {
   0% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
-  }
-  20% {
     filter: drop-shadow(0 0 0.05rem var(--foreground));
   }
-  40% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
-  }
-  60% {
-    filter: drop-shadow(0 0 0.05rem var(--foreground));
-  }
-  80% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
+  50% {
+    filter: drop-shadow(0 0 0.08rem var(--foreground));
   }
   100% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
+    filter: drop-shadow(0 0 0.05rem var(--foreground));
   }
 }
