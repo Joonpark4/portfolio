@@ -69,7 +69,7 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        neon: "neon 3000ms ease-in-out infinite",
+        neon: "neon 2000ms infinite",
       },
       boxShadow: {
         'up': '0 -2px 3px rgba(0, 0, 0, 0.5)',
