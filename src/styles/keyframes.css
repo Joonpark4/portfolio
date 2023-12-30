@@ -9,8 +9,10 @@
   background-position: right center;
 }
 
-.nav-button:hover {
-  background-position: left center;
+@media (hover: hover) {
+  .nav-button:hover {
+    background-position: left center;
+  }
 }
 
 .footer-button {
@@ -24,8 +26,10 @@
   background-position: center top;
 }
 
-.footer-button:hover {
-  background-position: center bottom;
+@media (hover: hover) {
+  .footer-button:hover {
+    background-position: center bottom;
+  }
 }
 
 @keyframes neon {
