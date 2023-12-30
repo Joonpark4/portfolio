@@ -16,6 +16,11 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        'svh': '100svh',
+        'dvh': '100dvh',
+        'lvh': '100lvh',
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

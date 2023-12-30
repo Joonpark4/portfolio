@@ -12,7 +12,7 @@ export default function AboutMePage() {
               <h1 className="text-4xl font-bold">박철준</h1>
               <h2 className="text-2xl font-bold">Cheol Joon Park</h2>
             </div>
-            <p className="px-3 w-52 bg-muted text-muted-foreground">
+            <p className="w-52 bg-muted text-muted-foreground">
               Front-End Developer
             </p>
           </div>
