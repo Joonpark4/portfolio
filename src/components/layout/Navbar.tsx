@@ -22,7 +22,7 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
     { name: "Contact", path: "/contact" },
     { name: "Diary", path: "/diary" },
   ];
-  const sidebarStyle = "max-h-[40vh] flex-col overflow-hidden";
+  const sidebarStyle = "max-h-[50vh] flex-col overflow-hidden";
   const footerStyle = "h-full";
 
   const icons = [
