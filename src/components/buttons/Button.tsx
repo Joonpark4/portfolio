@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva("", {
   variants: {
     variant: {
-      defaultNav: "nav-button border-b-2 border-solid border-coolgray-10 py-3 mx-2 first:border-t-2",
-      selectedNav: "border-b-2 border-solid border-coolgray-10 py-3 mx-2 first:border-t-2 bg-border font-bold",
+      defaultNav: "nav-button border-b-2 border-solid border-coolgray-10 py-1 mx-2 first:border-t-2",
+      selectedNav: "border-b-2 border-solid border-coolgray-10 py-1 mx-2 first:border-t-2 bg-border font-bold",
       defaultFooter:
         "footer-button flex justify-center items-center flex-col gap-1",
       selectedFooter:
