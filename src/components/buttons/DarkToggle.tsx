@@ -1,35 +1,33 @@
-"use client";
-import { Switch } from "@/components/ui/switch";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+'use client';
+import { Switch } from '@/components/ui/switch';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 export default function DarkToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    if (resolvedTheme) {
-      setIsDark(resolvedTheme === "dark");
-      setTheme(resolvedTheme);
-    }
-  }, [resolvedTheme]);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    setTheme(!isDark ? "dark" : "light");
-  };
+    setIsDark(theme === 'dark');
+  }, [theme]);
 
   return (
     <div
-      className=" self-stretch flex gap-3 items-center justify-center cursor-pointer"
-      onClick={toggleTheme}>
-      <Sun className="h-[1.2rem] w-[1.2rem]" />
-      <Switch
-        checked={isDark}
-        onCheckedChange={toggleTheme}
+      className="relative flex gap-3 items-center justify-center cursor-pointer"
+      onClick={()=>setTheme(theme === 'dark' ? 'light' : 'dark')}
+    >
+      <Moon
+        className={`absolute top-2 left-2 h-[1.5rem] w-[1.5rem] ${
+          isDark ? '' : 'hidden'
+        } text-gray-950`}
       />
-      <Moon className="h-[1.2rem] w-[1.2rem]" />
+      <Switch checked={isDark} onCheckedChange={()=>setTheme(theme === 'dark' ? 'light' : 'dark')} />
+      <Sun
+        className={`absolute top-2 right-3 h-[1.5rem] w-[1.5rem] ${
+          isDark ? 'hidden' : ''
+        }`}
+      />
     </div>
   );
 }

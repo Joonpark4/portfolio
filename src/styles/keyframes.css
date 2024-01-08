@@ -9,27 +9,37 @@
   background-position: right center;
 }
 
-.nav-button:hover {
-  background-position: left center;
+@media (pointer: fine) {
+  .nav-button:hover {
+    background-position: left center;
+  }
+}
+
+.footer-button {
+  background-size: auto 210%;
+  background-image: linear-gradient(
+    to top,
+    var(--border) 50%,
+    var(--background) 50%
+  );
+  transition: background-position 200ms ease-in-out;
+  background-position: center top;
+}
+
+@media (pointer: fine) {
+  .footer-button:hover {
+    background-position: center bottom;
+  }
 }
 
 @keyframes neon {
   0% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
-  }
-  20% {
     filter: drop-shadow(0 0 0.05rem var(--foreground));
   }
-  40% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
-  }
-  60% {
-    filter: drop-shadow(0 0 0.05rem var(--foreground));
-  }
-  80% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
+  50% {
+    filter: drop-shadow(0 0 0.08rem var(--foreground));
   }
   100% {
-    filter: drop-shadow(0 0 0rem var(--foreground));
+    filter: drop-shadow(0 0 0.05rem var(--foreground));
   }
 }

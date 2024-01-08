@@ -7,13 +7,16 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva("", {
   variants: {
     variant: {
-      default:
-        "nav-button self-stretch border-b-[1px] border-solid border-coolgray-10 px-3 py-2 mx-2",
-      selected: "self-stretch bg-border px-3 py-2 mx-2 font-bold",
+      defaultNav: "nav-button border-b-2 border-solid border-coolgray-10 py-1 mx-2 first:border-t-2",
+      selectedNav: "border-b-2 border-solid border-coolgray-10 py-1 mx-2 first:border-t-2 bg-border font-bold",
+      defaultFooter:
+        "footer-button flex justify-center items-center flex-col gap-1",
+      selectedFooter:
+        "flex justify-center items-center flex-col gap-1 bg-border font-bold",
     },
   },
   defaultVariants: {
-    variant: "default",
+    variant: "defaultNav",
   },
 });
 
@@ -28,7 +31,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, className }))}
+        className={cn("w-full h-full", buttonVariants({ variant, className }))}
         ref={ref}
         {...props}
       />
