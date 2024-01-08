@@ -16,6 +16,11 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        'svh': '100svh',
+        'dvh': '100dvh',
+        'lvh': '100lvh',
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",
@@ -69,7 +74,11 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        neon: "neon 3000ms ease-in-out infinite",
+        neon: "neon 2000ms infinite",
+      },
+      boxShadow: {
+        'up': '0 -2px 3px rgba(0, 0, 0, 0.5)',
+        'inside': '-3px -3px 2px rgba(0, 0, 0, 0.5)',
       },
     },
   },
