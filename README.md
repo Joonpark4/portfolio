@@ -1,7 +1,6 @@
-# Project Name (with Link)
- - [Web-Portfolio Page](https://joondev.com/)
+# [Web-Portfolio Page](https://joondev.com/)
 
-# Project Information
+# Information
 - domain : https://joondev.com/
 - Framework : Next.js [14.0.4]
 - Platforms : Desktop, Mobile Web (Responsive)
