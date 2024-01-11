@@ -1,6 +1,4 @@
 # [Web-Portfolio Page](https://joondev.com/)
-
-# Information
 - domain : https://joondev.com/
 - Framework : Next.js [14.0.4]
 - Platforms : Desktop, Mobile Web (Responsive)
