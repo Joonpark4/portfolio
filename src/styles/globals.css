@@ -86,7 +86,7 @@ html {
   }
 }
  
-
+/* 다크모드 전환 시 부드럽게 변경되도록 합니다 */
 @layer base {
   * {
     @apply border-border;
@@ -96,9 +96,30 @@ html {
     transition: background-color 0.5s ease, color 0.5s ease;
   }
 }
+
+/* 다음은 인풋 박스에 자동완성 배경색이 안나오도록 합니다 */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   background-color: inherit;
   border-color: inherit;
+}
+
+/* 다음은 다이어리 카드의 접힌 부분을 만듭니다 */
+.diagonal-split-bg {
+  position: absolute;
+  background: var(--background); /* 왼쪽 상단 배경색 */
+  overflow: hidden; /* 사선이 div 바깥으로 나가지 않도록 설정 */
+  box-shadow: 3px 1px 1px rgba(0, 0, 0, 0.3) /* 왼쪽 하단 배경색 */
+}
+.diagonal-split-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(224 181 75); /* 오른쪽 하단 배경색 */
+  transform: skewY(135deg); /* Y축 기준 45도 기울임 */
+  transform-origin: top right; /* 변환 원점을 오른쪽 상단으로 설정 */
 }
