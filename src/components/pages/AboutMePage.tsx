@@ -1,5 +1,12 @@
 import Image from "next/image";
 import ProfilePic from "@/../public/img/mypic.png";
+import {
+  UserSquare2Icon,
+  BoxesIcon,
+  MailPlus,
+  BookOpenTextIcon,
+  AtomIcon,
+} from "lucide-react";
 
 export default function AboutMePage() {
   return (
@@ -10,7 +17,7 @@ export default function AboutMePage() {
             <Image
               src={ProfilePic}
               alt="My profile picture"
-              className="w-72 rounded-full px-4"
+              className="w-64 rounded-full px-4"
             />
           </div>
           <div className="flex flex-col gap-2">
@@ -34,12 +41,7 @@ export default function AboutMePage() {
                 <div className="w-full col-span-4 text-lg">
                   1992. 12. 14 / Male
                 </div>
-                <div className="w-full">E-mail :</div>
-                <div className="w-full col-span-3">{`sargadil@gmail.com`}</div>
-                <div className="w-full">Mobile :</div>
-                <div className="w-full col-span-3">{`+82) 10-8668-5503`}</div>
-                <div className="w-full">GitHub :</div>
-                <div className="w-full col-span-3">{`github.com/Joonpark4`}</div>
+                
               </div>
             </div>
 
@@ -48,12 +50,12 @@ export default function AboutMePage() {
                 LANGUAGES
               </div>
               <div className="w-full grid grid-cols-4 grid-rows-3 gap-y-2 px-1 py-3">
-                <div className="w-full">E-mail :</div>
+                {/* <div className="w-full">E-mail :</div>
                 <div className="w-full col-span-3">{`sargadil@gmail.com`}</div>
                 <div className="w-full">Mobile :</div>
                 <div className="w-full col-span-3">{`+82) 10-8668-5503`}</div>
                 <div className="w-full">GitHub :</div>
-                <div className="w-full col-span-3">{`github.com/Joonpark4`}</div>
+                <div className="w-full col-span-3">{`github.com/Joonpark4`}</div> */}
               </div>
             </div>
 
