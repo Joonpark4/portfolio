@@ -1,6 +1,7 @@
-import DiaryPage from "@/components/pages/DiaryPage";
 export default function Diary(){
    return (
-      <DiaryPage />
+      <section>
+        다이어리 페이지
+      </section>
    );
 };

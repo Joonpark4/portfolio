@@ -1,6 +1,7 @@
-import PortfolioPage from "@/components/pages/PortfolioPage";
 export default function Portfolio(){
    return (
-      <PortfolioPage />
+      <section>
+        포폴 페이지
+      </section>
    );
 };
