@@ -8,10 +8,8 @@ export default function DiaryCard() {
   );
 
   return (
-    <div className="bg-yellow-200 max-w-full h-auto p-6 relative">
-      <div className="absolute top-0 left-0 bg-background w-6 h-6">
-        {/* <div className="absolute inset-0 bg-white transform rotate-45 -translate-x-1/2 -translate-y-1/2"></div> */}
-        {/* <div className="absolute inset-0 bg-blue-500 transform -rotate-45 translate-x-1/2"></div> */}
+    <div className="bg-yellow-200 max-w-full h-auto p-6 relative shadow-diary">
+      <div className="diagonal-split-bg absolute top-0 left-0 bg-background w-6 h-6">
       </div>
       <h2 className=" text-xl font-bold">안녕하세요</h2>
       {randomArray.map((item, index) => (
