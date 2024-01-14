@@ -1,12 +1,13 @@
+import plugin from "tailwindcss/plugin";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -17,9 +18,9 @@ module.exports = {
     },
     extend: {
       height: {
-        'svh': '100svh',
-        'dvh': '100dvh',
-        'lvh': '100lvh',
+        svh: "100svh",
+        dvh: "100dvh",
+        lvh: "100lvh",
       },
       colors: {
         border: "var(--border)",
@@ -77,10 +78,23 @@ module.exports = {
         neon: "neon 2000ms infinite",
       },
       boxShadow: {
-        'up': '0 -2px 3px rgba(0, 0, 0, 0.5)',
-        'inside': '-3px -3px 2px rgba(0, 0, 0, 0.5)',
+        up: "0 -2px 3px rgba(0, 0, 0, 0.5)",
+        down: "0 2px 3px rgba(0, 0, 0, 0.5)",
+        inside: "-3px -3px 2px rgba(0, 0, 0, 0.5)",
+        diary: "4px 4px 3px rgba(0, 0, 0, 0.5)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(function ({ addBase, theme }) {
+      addBase({
+        h1: {
+          fontSize: theme("fontSize.3xl"),
+          fontWeight: "bold",
+          margin: theme("margin.2"),
+        },
+      });
+    }),
+  ],
+};

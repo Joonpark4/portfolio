@@ -31,7 +31,7 @@ export default function RootLayout({
           enableSystem={false}>
           <Header />
           <Sidebar />
-          <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto">
+          <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto p-10">
             {children}
           </main>
           <Footer />

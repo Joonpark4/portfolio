@@ -1,6 +1,6 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
-import { Button } from "@/components/buttons/Button";
+import { NavButton } from "@/components/buttons/NavButton";
 import {
   UserSquare2Icon,
   BoxesIcon,
@@ -38,7 +38,7 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
         isSidebar ? sidebarStyle : footerStyle,
       )}>
       {pages.map((button, index) => (
-        <Button
+        <NavButton
           key={index}
           variant={
             pathName === button.path
@@ -52,7 +52,7 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
           onClick={() => router.push(button.path)}>
           {!isSidebar && icons[index]}
           {button.name}
-        </Button>
+        </NavButton>
       ))}
     </nav>
   );

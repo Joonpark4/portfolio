@@ -1,6 +1,7 @@
-import TechStackPage from "@/components/pages/TechStackPage";
 export default function TechStack(){
    return (
-      <TechStackPage />
+      <section>
+        기술 스택 페이지
+      </section>
    );
 };
