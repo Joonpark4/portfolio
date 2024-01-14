@@ -1,6 +1,5 @@
-import ContactPage from "@/components/pages/ContactPage";
 export default function Contact(){
    return (
-      <ContactPage />
+        <section>콘택트 페이지</section>
    );
 };
