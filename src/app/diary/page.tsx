@@ -10,7 +10,7 @@ export default function Diary() {
     { title: "Hi1", content: "Hello", date: "24.01.13" },
     {
       title: "Sunny Day2",
-      content: "It's a beautiful sunny day outside.It's a beautiful sunny day outside.It's a beautiful sunny day outside.It's a beautiful sunny day outside.It's a beautiful sunny day outside.",
+      content: "It's a beautiful sunny day outside.It's a beautiful sunny day outside.It's a beautiful sunny day outside.",
       date: "24.01.14",
     },
     {
