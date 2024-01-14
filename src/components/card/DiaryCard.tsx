@@ -1,11 +1,11 @@
 import { DiaryProps } from "@/types/Diary";
+
 export default function DiaryCard({
   title,
   content,
   date,
   ...props
 }: DiaryProps) {
-
 
   return (
     <div className="bg-yellow-200 max-w-full h-auto p-6 relative shadow-diary">

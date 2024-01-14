@@ -1,5 +1,6 @@
 'use client'
 import DiaryCard from "@/components/card/DiaryCard";
+import DiaryTop from "@/components/layout/DiaryTop";
 import { useEffect, useState } from "react";
 
 export default function Diary() {
@@ -90,6 +91,7 @@ export default function Diary() {
   return (
     <section className="flex flex-col">
       다이어리 페이지
+      <DiaryTop />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {splitData.map((item:any, index:any) => (
           <div className="grid gap-4" key={index}>
