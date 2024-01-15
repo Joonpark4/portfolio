@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import "./keyframes.css";
+@import "./diary.css";
 
 html {
   /* phone: 0~480px */
@@ -110,25 +111,3 @@ input:-webkit-autofill:focus {
   border-color: inherit;
 }
 
-/* 다음은 다이어리 카드의 접힌 부분을 만듭니다 */
-.memo {
-  clip-path: polygon(1.5rem 0%, 105% 0, 105% 105%, 0 105%, 0% 1.5rem);
-}
-
-.diagonal-split-bg {
-  position: absolute;
-  background: none; /* 왼쪽 상단 배경색 */
-  overflow: hidden; /* 사선이 div 바깥으로 나가지 않도록 설정 */
-  box-shadow: 3px 1px 1px rgba(0, 0, 0, 0.3); /* 왼쪽 하단 배경색 */
-}
-.diagonal-split-bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: var(--memo-foreground); /* 오른쪽 하단 배경색 */
-  transform: skewY(135deg); /* Y축 기준 45도 기울임 */
-  transform-origin: top right; /* 변환 원점을 오른쪽 상단으로 설정 */
-}

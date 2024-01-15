@@ -61,6 +61,9 @@ module.exports = {
           foreground: "var(--memo-foreground)",
         }
       },
+      backgroundColor: {
+        modalBg:'modal-bg'
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
