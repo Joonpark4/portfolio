@@ -89,14 +89,13 @@ export default function Diary() {
 
 
   return (
-    <section className="flex flex-col">
-      다이어리 페이지
+    <section className="flex flex-col gap-4">
       <DiaryTop />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
         {splitData.map((item:any, index:any) => (
           <div className="grid gap-4" key={index}>
             {item.map((item:any, index:any) => (
-              <DiaryCard key={index} title={item.title} content={item.content} date={item.date} />
+              <DiaryCard key={index} title={item.title} content={item.content} date={item.date} className={`hover-scale `} />
             ))}
           </div>
         ))}
