@@ -56,6 +56,10 @@ module.exports = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        memo: {
+          DEFAULT : "var(--memo)",
+          foreground: "var(--memo-foreground)",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

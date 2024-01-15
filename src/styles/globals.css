@@ -53,6 +53,10 @@ html {
     --ring: #93c5fd;
 
     --radius: 0.5rem;
+
+    
+    --memo: #fef08a;
+    --memo-foreground: #e0b54b;
   }
 
   .dark {
@@ -83,6 +87,9 @@ html {
     --border: #1e293b;
     --input: #1e293b;
     --ring: #cad4e0;
+
+    --memo: #e0b54b;
+    --memo-foreground: #fef08a;
   }
 }
  
@@ -119,7 +126,7 @@ input:-webkit-autofill:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgb(224 181 75); /* 오른쪽 하단 배경색 */
+  background: var(--memo-foreground); /* 오른쪽 하단 배경색 */
   transform: skewY(135deg); /* Y축 기준 45도 기울임 */
   transform-origin: top right; /* 변환 원점을 오른쪽 상단으로 설정 */
 }
