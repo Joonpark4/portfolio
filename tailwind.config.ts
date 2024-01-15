@@ -56,6 +56,10 @@ module.exports = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
+        memo: {
+          DEFAULT : "var(--memo)",
+          foreground: "var(--memo-foreground)",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -87,7 +91,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    plugin(function ({ addBase, theme }) {
+    plugin(function ({ addBase, theme, addComponents }) {
       addBase({
         h1: {
           fontSize: theme("fontSize.3xl"),
@@ -95,6 +99,13 @@ module.exports = {
           margin: theme("margin.2"),
         },
       });
+      addComponents({
+        '.centered': {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+      })
     }),
   ],
 };
