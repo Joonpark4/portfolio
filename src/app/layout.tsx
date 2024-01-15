@@ -32,9 +32,9 @@ export default function RootLayout({
           enableSystem={false}>
           <Header />
           <Sidebar />
+          <Modal />
           <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto p-10 relative">
             {children}
-            <Modal />
           </main>
           <Footer />
         </ThemeProvider>
