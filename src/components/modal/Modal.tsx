@@ -12,7 +12,7 @@ export default function Modal() {
     isModalOpen && ( // 표시 여부 결정
       <div className="absolute top-0 left-0 w-full h-full centered">
         <div
-          className="absolute w-full h-full bg-blue-50 bg-opacity-60"
+          className="absolute w-full h-full bg-background-opacity-60"
           onClick={closeModal}></div>
         <DiaryCard
           title="Hi"
