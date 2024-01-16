@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
 import Modal from "@/components/modal/Modal";
+import Providers from "@/app/providers";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ export default function RootLayout({
           <Sidebar />
           <Modal />
           <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto p-10 relative">
-            {children}
+            <Providers>{children}</Providers>
           </main>
           <Footer />
         </ThemeProvider>
