@@ -1,6 +1,7 @@
 "use client";
 import { useModalStore } from "@/store/modal";
 import DiaryCard from "../card/DiaryCard";
+
 export default function Modal() {
   const { isModalOpen, closeModal } = useModalStore((state) => ({
     isModalOpen: state.isModalOpen,
@@ -17,7 +18,8 @@ export default function Modal() {
           title="Hi"
           content="Hello"
           date="24.01.13"
-          className="w-4/5 h-2/3 z-30 sm:w-3/4 md:w-2/3 lg:w-1/2"
+          className="w-4/5 h-2/3 z-30 sm:w-3/4 md:w-2/3 lg:w-1/2 max-w-[600px]"
+          isWriting={true}
         />
       </div>
     )
