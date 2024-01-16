@@ -3,11 +3,13 @@ import DiaryCard from "@/components/card/DiaryCard";
 import DiaryTop from "@/components/layout/DiaryTop";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDiaryData } from "@/services/queries";
 
 export default function Diary() {
   const [cols, setCols] = useState(1);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const diaryData = useDiaryData();
 
   async function getDiaryData() {
     // axios로 데이터 가져와서 콘솔에 출력
@@ -41,7 +43,7 @@ export default function Diary() {
     return <div>Loading...</div>;
   }
 
-  const splitData = data.reduce(
+  const splitData = diaryData.data.reduce(
     (result: any, value: any, index: any) => {
       const splitIndex = index % cols;
       result[splitIndex].push(value);
@@ -54,7 +56,7 @@ export default function Diary() {
     <section className="flex flex-col gap-4">
       <DiaryTop />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
-        {splitData.map((item: any, index: any) => (
+        {/* {splitData.map((item: any, index: any) => (
           <div className="grid gap-4" key={index}>
             {item.map((item: any, index: any) => (
               <DiaryCard
@@ -63,10 +65,19 @@ export default function Diary() {
                 content={item.content}
                 date={item.date}
                 className={`hover-scale `}
-                getDiaryData={getDiaryData}
               />
             ))}
           </div>
+        ))} */}
+        
+        {diaryData.data.map((item:any) => (
+          <DiaryCard
+          key={item._id}
+          title={item.title}
+          content={item.content}
+          date={item.date}
+          className={`hover-scale `}
+        />
         ))}
       </div>
     </section>

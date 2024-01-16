@@ -5,7 +5,6 @@ export interface DiaryProps {
   className?: string;
   onClick?: () => void;
   isWriting?: boolean;
-  getDiaryData?: any;
 }
 
 export interface DiaryGridProps {
