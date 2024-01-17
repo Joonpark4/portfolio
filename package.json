@@ -11,15 +11,21 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
+    "@tanstack/react-query": "^5.17.12",
+    "@tanstack/react-query-devtools": "^5.17.12",
+    "axios": "^1.6.5",
     "lucide-react": "^0.294.0",
+    "mongodb": "^6.3.0",
     "next": "14.0.4",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.3",
     "sharp": "^0.33.1",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.17.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
