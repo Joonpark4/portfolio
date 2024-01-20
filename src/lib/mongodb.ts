@@ -25,7 +25,7 @@ const client = new MongoClient(uri, {
 
 
 // MongoDB 클라이언트 연결 함수
-async function setMogoConnect() {
+async function setMongoConnect() {
   try {
     // 클라이언트를 통해 MongoDB에 연결합니다.
     await client.connect();
@@ -40,7 +40,7 @@ async function setMogoConnect() {
 }
 
 // MongoDB 클라이언트 연결 끊기 함수
-async function setMogoDisconnect() {
+async function setMongoDisconnect() {
   try {
     // 클라이언트를 통해 MongoDB에 연결을 끊습니다.
     await client.close();
@@ -54,4 +54,4 @@ async function setMogoDisconnect() {
 
 
 // MongoDB 클라이언트를 내보냅니다.
-export { client, setMogoConnect, setMogoDisconnect };
+export { client, setMongoConnect, setMongoDisconnect };
