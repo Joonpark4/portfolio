@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
 import Modal from "@/components/modal/Modal";
 import Providers from "@/app/providers";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-240CRYK9QZ" />
       </body>
     </html>
   );
