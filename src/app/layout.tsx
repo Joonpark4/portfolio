@@ -27,15 +27,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
-        className={`flex h-dvh items-center justify-center sm:p-4 sm:gap-1 flex-col ${Noto.className} sm:flex-row`}>
+        className={`flex h-dvh flex-col items-center justify-center sm:gap-1 sm:p-4 ${Noto.className} sm:flex-row`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem={false}>
+          enableSystem={false}
+        >
           <Header />
           <Sidebar />
           <Modal />
-          <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto p-10 relative">
+          <main className="relative h-full w-full max-w-[1200px] flex-1 overflow-hidden overflow-y-auto p-10 sm:border">
             <Providers>{children}</Providers>
           </main>
           <Footer />

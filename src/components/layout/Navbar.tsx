@@ -34,9 +34,10 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
   return (
     <nav
       className={cn(
-        "grow flex items-start justify-start",
+        "flex grow items-start justify-start",
         isSidebar ? sidebarStyle : footerStyle,
-      )}>
+      )}
+    >
       {pages.map((button, index) => (
         <NavButton
           key={index}
@@ -46,10 +47,11 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
                 ? "selectedNav"
                 : "selectedFooter"
               : isSidebar
-              ? "defaultNav"
-              : "defaultFooter"
+                ? "defaultNav"
+                : "defaultFooter"
           }
-          onClick={() => router.push(button.path)}>
+          onClick={() => router.push(button.path)}
+        >
           {!isSidebar && icons[index]}
           {button.name}
         </NavButton>

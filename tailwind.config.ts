@@ -57,12 +57,12 @@ module.exports = {
           foreground: "var(--card-foreground)",
         },
         memo: {
-          DEFAULT : "var(--memo)",
+          DEFAULT: "var(--memo)",
           foreground: "var(--memo-foreground)",
-        }
+        },
       },
       backgroundColor: {
-        modalBg:'modal-bg'
+        modalBg: "modal-bg",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -103,12 +103,12 @@ module.exports = {
         },
       });
       addComponents({
-        '.centered': {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+        ".centered": {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         },
-      })
+      });
     }),
   ],
 };

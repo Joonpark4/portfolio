@@ -50,35 +50,38 @@ export default function DiaryCard({
 
   return (
     <div
-      className={cn("bg-memo p-6 relative shadow-diary memo", props.className)}>
-      <div className="diagonal-split-bg absolute top-0 left-0 w-6 h-6"></div>
+      className={cn("memo relative bg-memo p-6 shadow-diary", props.className)}
+    >
+      <div className="diagonal-split-bg absolute left-0 top-0 h-6 w-6"></div>
       <form
         className={cn(
-          "h-full flex flex-col justify-between text-black",
+          "flex h-full flex-col justify-between text-black",
           props.isWriting && " p-2",
         )}
-        onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col h-full">
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="flex h-full flex-col">
           {props.isWriting ? (
             <input
               type="text"
-              className="w-full text-xl mb-4"
+              className="mb-4 w-full text-xl"
               {...register("title", { required: true })}
             />
           ) : (
-            <h2 className="text-xl font-bold mb-4">{title}</h2>
+            <h2 className="mb-4 text-xl font-bold">{title}</h2>
           )}
           {props.isWriting ? (
             <textarea
               className="h-full"
-              {...register("content", { required: true })}></textarea>
+              {...register("content", { required: true })}
+            ></textarea>
           ) : (
             <p className="h-full">{content}</p>
           )}
         </div>
         <div>
           {props.isWriting ? (
-            <div className="w-full flex justify-end gap-4 mt-2">
+            <div className="mt-2 flex w-full justify-end gap-4">
               <Button type="submit">Posting</Button>
             </div>
           ) : (

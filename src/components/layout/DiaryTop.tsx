@@ -7,8 +7,8 @@ export default function DiaryTop() {
   }));
 
   return (
-    <div className="flex justify-end border-border border-y-4 px-4 py-2">
-      <Button className="w-20 h-12" onClick={openModal}>
+    <div className="flex justify-end border-y-4 border-border px-4 py-2">
+      <Button className="h-12 w-20" onClick={openModal}>
         New
       </Button>
     </div>

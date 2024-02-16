@@ -8,7 +8,7 @@ export interface DiaryProps {
 }
 
 export interface DiaryGridProps {
-  cols : number;
+  cols: number;
 }
 
 export interface DiaryForm {

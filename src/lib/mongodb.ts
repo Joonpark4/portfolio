@@ -22,8 +22,6 @@ const client = new MongoClient(uri, {
   },
 });
 
-
-
 // MongoDB 클라이언트 연결 함수
 async function setMongoConnect() {
   try {
@@ -51,7 +49,6 @@ async function setMongoDisconnect() {
     throw new Error();
   }
 }
-
 
 // MongoDB 클라이언트를 내보냅니다.
 export { client, setMongoConnect, setMongoDisconnect };
