@@ -14,7 +14,7 @@ export default function DarkToggle() {
 
   return (
     <div
-      className="relative flex cursor-pointer items-center justify-center gap-3"
+      className="centered relative flex cursor-pointer gap-3"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       <Moon

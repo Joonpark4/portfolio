@@ -4,8 +4,8 @@ import ProfilePic from "@/../public/img/mypic.png";
 export default function Home() {
   return (
     <section className="flex w-full flex-col items-start justify-center">
-      <div className="flex flex-wrap items-center justify-center gap-10">
-        <div className="flex items-center justify-center">
+      <div className="centered flex-wrap gap-10">
+        <div className="centered">
           <Image
             src={ProfilePic}
             alt="My profile picture"
@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-10 font-bold">
+      <div className="centered mt-6 flex flex-wrap gap-10 font-bold">
         <div className="flex flex-col items-start justify-start gap-5">
           <div className="flex w-72 flex-col items-start justify-start">
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
@@ -40,14 +40,7 @@ export default function Home() {
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
               LANGUAGES
             </div>
-            <div className="grid w-full grid-cols-4 grid-rows-3 gap-y-2 px-1 py-3">
-              {/* <div className="w-full">E-mail :</div>
-                <div className="w-full col-span-3">{`sargadil@gmail.com`}</div>
-                <div className="w-full">Mobile :</div>
-                <div className="w-full col-span-3">{`+82) 10-8668-5503`}</div>
-                <div className="w-full">GitHub :</div>
-                <div className="w-full col-span-3">{`github.com/Joonpark4`}</div> */}
-            </div>
+            <div className="grid w-full grid-cols-4 grid-rows-3 gap-y-2 px-1 py-3"></div>
           </div>
 
           <div className="flex w-72 flex-col items-start justify-start">
@@ -70,8 +63,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex h-20 w-64 items-center justify-center bg-yellow-500"></div>
-        <div className="flex h-20 w-64 items-center justify-center bg-green-500"></div>
+        <div className="centered h-20 w-64 bg-yellow-500"></div>
+        <div className="centered h-20 w-64 bg-green-500"></div>
       </div>
     </section>
   );

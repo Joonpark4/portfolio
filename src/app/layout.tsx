@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <body
-        className={`flex h-dvh flex-col items-center justify-center sm:gap-1 sm:p-4 ${Noto.className} sm:flex-row`}
+        className={`centered h-dvh flex-col sm:gap-1 sm:p-4 ${Noto.className} sm:flex-row`}
       >
         <ThemeProvider
           attribute="class"
