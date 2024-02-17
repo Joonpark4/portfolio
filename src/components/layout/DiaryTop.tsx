@@ -1,6 +1,8 @@
+'use client'
 import axios from "axios";
 import { Button } from "../ui/button";
 import { useModalStore } from "@/store/modal";
+
 export default function DiaryTop() {
   const { openModal } = useModalStore((state) => ({
     openModal: state.openModal,
