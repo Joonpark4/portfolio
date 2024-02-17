@@ -1,6 +1,6 @@
 "use client";
 import { useModalStore } from "@/store/modal";
-import DiaryCard from "../card/DiaryCard";
+import DiaryCardWriting from "../card/DiaryCardWriting";
 
 export default function Modal() {
   const { isModalOpen, closeModal } = useModalStore((state) => ({
@@ -14,12 +14,8 @@ export default function Modal() {
         <div
           className="absolute w-full h-full bg-background-opacity-60"
           onClick={closeModal}></div>
-        <DiaryCard
-          title="Hi"
-          content="Hello"
-          date="24.01.13"
+        <DiaryCardWriting
           className="w-4/5 h-2/3 z-30 sm:w-3/4 md:w-2/3 lg:w-1/2 max-w-[600px]"
-          isWriting={true}
         />
       </div>
     )

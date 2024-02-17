@@ -43,12 +43,6 @@ export default function Home() {
                 LANGUAGES
               </div>
               <div className="w-full grid grid-cols-4 grid-rows-3 gap-y-2 px-1 py-3">
-                {/* <div className="w-full">E-mail :</div>
-                <div className="w-full col-span-3">{`sargadil@gmail.com`}</div>
-                <div className="w-full">Mobile :</div>
-                <div className="w-full col-span-3">{`+82) 10-8668-5503`}</div>
-                <div className="w-full">GitHub :</div>
-                <div className="w-full col-span-3">{`github.com/Joonpark4`}</div> */}
               </div>
             </div>
 
