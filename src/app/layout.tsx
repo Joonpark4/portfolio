@@ -6,7 +6,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
 import Modal from "@/components/modal/Modal";
-import Providers from "@/app/providers";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 const Noto = Noto_Sans_KR({
@@ -37,8 +36,8 @@ export default function RootLayout({
           <Header />
           <Sidebar />
           <Modal />
-          <main className="relative h-full w-full max-w-[1200px] flex-1 overflow-hidden overflow-y-auto p-10 sm:border">
-            <Providers>{children}</Providers>
+          <main className="w-full h-full flex-1 max-w-[1200px] sm:border overflow-hidden overflow-y-auto p-10 relative">
+            {children}
           </main>
           <Footer />
         </ThemeProvider>
