@@ -24,10 +24,7 @@ export default function DiaryCardWriting({ ...props }) {
   const onSubmit = async (data: any) => {
     setLoading(true);
     try {
-      const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/diary`,
-        data,
-      );
+      const res = await axios.post("/api/diary", data);
       if (res.status === 200) {
         console.log("Success");
       } else {
@@ -47,23 +44,26 @@ export default function DiaryCardWriting({ ...props }) {
 
   return (
     <div
-      className={cn("bg-memo p-6 relative shadow-diary memo", props.className)}>
-      <div className="diagonal-split-bg absolute top-0 left-0 w-6 h-6"></div>
+      className={cn("memo relative bg-memo p-6 shadow-diary", props.className)}
+    >
+      <div className="diagonal-split-bg absolute left-0 top-0 h-6 w-6"></div>
       <form
-        className={cn("h-full flex flex-col justify-between text-black p-2")}
-        onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col h-full">
+        className={cn("flex h-full flex-col justify-between p-2 text-black")}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="flex h-full flex-col">
           <input
             type="text"
-            className="w-full text-xl mb-4"
+            className="mb-4 w-full text-xl"
             {...register("title", { required: true })}
           />
           <textarea
             className="h-full"
-            {...register("content", { required: true })}></textarea>
+            {...register("content", { required: true })}
+          ></textarea>
         </div>
         <div>
-          <div className="w-full flex justify-end gap-4 mt-2">
+          <div className="mt-2 flex w-full justify-end gap-4">
             <Button type="submit">Posting</Button>
           </div>
         </div>
