@@ -7,6 +7,7 @@ import {
   MailPlus,
   BookOpenTextIcon,
   AtomIcon,
+  BoxIcon,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
     { name: "Tech Stack", path: "/tech" },
     { name: "Contact", path: "/contact" },
     { name: "Diary", path: "/diary" },
+    { name: "SandBox", path: "/sandbox" },
   ];
   const sidebarStyle = "max-h-[50vh] flex-col overflow-hidden";
   const footerStyle = "h-full";
@@ -29,6 +31,7 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
     <AtomIcon key={"2"} size={28} />,
     <MailPlus key={"3"} size={28} />,
     <BookOpenTextIcon key={"4"} size={28} />,
+    <BoxIcon key={"5"} size={28} />,
   ];
 
   return (

@@ -29,7 +29,6 @@ async function setMongoConnect() {
   try {
     // 이미 연결되어 있으면 추가 연결 시도를 방지합니다.
     if (isConnected) {
-      console.log("already connected to MongoDB");
       return;
     }
     // 클라이언트를 통해 MongoDB에 연결합니다.
