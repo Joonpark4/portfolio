@@ -1,5 +1,11 @@
 import Image from "next/image";
 import ProfilePic from "@/../public/img/mypic.png";
+import ReactPic from "@/../public/img/react.svg";
+import NextPic from "@/../public/img/nextdotjs.svg";
+import TypescriptPic from "@/../public/img/typescript.svg";
+import TailwindPic from "@/../public/img/tailwindcss.svg";
+import MongoDbPic from "@/../public/img/mongodb.svg";
+import FramerPic from "@/../public/img/framer.svg";
 
 export default function Home() {
   return (
@@ -29,10 +35,12 @@ export default function Home() {
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
               PROFILE / CONTACT
             </div>
-            <div className="grid w-full grid-cols-4 grid-rows-4 gap-y-2 px-1 py-3">
+            <div className="grid w-full grid-cols-4 gap-y-2 px-1 py-3">
               <div className="col-span-4 w-full text-lg">
                 1992. 12. 14 / Male
               </div>
+              <div className="w-full">E-mail :</div>
+              <div className="col-span-3 w-full">sargadil@gmail.com</div>
             </div>
           </div>
 
@@ -40,26 +48,35 @@ export default function Home() {
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
               LANGUAGES
             </div>
-            <div className="grid w-full grid-cols-4 grid-rows-3 gap-y-2 px-1 py-3"></div>
+            <div className="grid w-full grid-cols-3 gap-y-2 px-1 py-3">
+              <div className="w-full">Korean :</div>
+              <div className="col-span-2 w-full">Native</div>
+              <div className="w-full">English :</div>
+              <div className="col-span-2 w-full">intermediate</div>
+            </div>
           </div>
 
           <div className="flex w-72 flex-col items-start justify-start">
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
               CORE TECH STACKS
             </div>
-            <div className="py-3place-items-center grid w-full grid-cols-3 grid-rows-4 gap-y-2 px-1">
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
-              <div className="w-full">E-mail :</div>
+            <div className="grid w-full grid-cols-3 place-items-center gap-3 px-1 py-3 *:w-full">
+              <Image src={ReactPic} alt="React" />
+              <Image src={NextPic} alt="Next.js" />
+              <Image src={TypescriptPic} alt="Typescript" />
+              <div className="flex justify-center text-center">React</div>
+              <div className="flex justify-center text-center">Next.js</div>
+              <div className="flex justify-center text-center">Typescript</div>
+              <Image src={TailwindPic} alt="Tailwind CSS" />
+              <Image src={MongoDbPic} alt="MongoDB" />
+              <Image src={FramerPic} alt="Framer Motion" />
+              <div className="flex justify-center text-center">
+                Tailwind CSS
+              </div>
+              <div className="flex justify-center text-center">MongoDB</div>
+              <div className="flex justify-center text-center">
+                Framer Motion
+              </div>
             </div>
           </div>
         </div>

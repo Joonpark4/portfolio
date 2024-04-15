@@ -17,8 +17,6 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
   const pages = [
     { name: "About Me", path: "/" },
     { name: "Portfolio", path: "/portfolio" },
-    { name: "Tech Stack", path: "/tech" },
-    { name: "Contact", path: "/contact" },
     { name: "Diary", path: "/diary" },
     { name: "SandBox", path: "/sandbox" },
   ];
