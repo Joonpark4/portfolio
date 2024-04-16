@@ -18,7 +18,6 @@ export default function Navbar({ isSidebar }: { isSidebar?: boolean }) {
     { name: "About Me", path: "/" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Diary", path: "/diary" },
-    { name: "SandBox", path: "/sandbox" },
   ];
   const sidebarStyle = "max-h-[50vh] flex-col overflow-hidden";
   const footerStyle = "h-full";
