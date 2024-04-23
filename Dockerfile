@@ -1,20 +1,25 @@
-# 1. Use node:alpine as base image
-FROM node:alpine
+# 빌드 스테이지
+FROM node:18 as builder
 
-# 2. Set /app as the working directory
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# 3. Copy the source code and package.json to the Docker image
+COPY package*.json ./
+
+RUN npm install
+
 COPY . .
 
-# 4. Install dependencies
-RUN yarn install
+RUN npm run build
 
-# 5. Build the app
-RUN yarn build
+# 실행 스테이지
+FROM node:18
 
-# 6. Expose port 3000
+WORKDIR /usr/src/app
+
+COPY --from=builder /usr/src/app/.next ./.next
+COPY --from=builder /usr/src/app/node_modules ./node_modules
+COPY —from=builder /usr/src/app/package*.json ./
+
+CMD [ "npm", "start" ]
+
 EXPOSE 3000
-
-# 7. Start the app
-CMD ["yarn", "start"]
