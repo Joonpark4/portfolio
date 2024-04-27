@@ -60,16 +60,16 @@ export default function Home() {
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 text-muted">
               CORE TECH STACKS
             </div>
-            <div className="grid w-full grid-cols-3 place-items-center gap-3 px-1 py-3 *:w-full">
+            <div className="grid w-full grid-cols-3 gap-x-9 gap-y-2 px-3 py-6 *:w-full">
               <Image src={ReactPic} alt="React" />
               <Image src={NextPic} alt="Next.js" />
               <Image src={TypescriptPic} alt="Typescript" />
               <div className="flex justify-center text-center">React</div>
               <div className="flex justify-center text-center">Next.js</div>
               <div className="flex justify-center text-center">Typescript</div>
-              <Image src={TailwindPic} alt="Tailwind CSS" />
-              <Image src={MongoDbPic} alt="MongoDB" />
-              <Image src={FramerPic} alt="Framer Motion" />
+              <Image src={TailwindPic} alt="Tailwind CSS" className="mt-4" />
+              <Image src={MongoDbPic} alt="MongoDB" className="mt-4" />
+              <Image src={FramerPic} alt="Framer Motion" className="mt-4" />
               <div className="flex justify-center text-center">
                 Tailwind CSS
               </div>
