@@ -27,7 +27,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: yourusername/yourrepository:latest # 수정 필요: Docker Hub 사용자 이름 및 리포지토리 이름
+          tags: sargadi/portfolio:latest # 수정 필요: Docker Hub 사용자 이름 및 리포지토리 이름
 
       - name: Build and Push to Docker Hub
         run: |
