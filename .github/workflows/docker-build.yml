@@ -38,9 +38,7 @@ jobs:
           port: ${{ secrets.SERVER_SSH_PORT }}
           script: |
             cd /var/snap/docker/portfolio
-            docker-compose down
-            docker-compose pull
-            docker-compose up -d
+            ./deploy.sh
 
       - name: Completion
         run: echo "Deployment completed successfully."
