@@ -32,10 +32,10 @@ jobs:
       - name: Deploy to Remote Server
         uses: appleboy/ssh-action@v0.1.4
         with:
+          key: ${{ secrets.SERVER_SSH_KEY }}
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           port: ${{ secrets.SERVER_SSH_PORT }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /var/snap/docker/portfolio
             docker-compose down
