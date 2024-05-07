@@ -7,7 +7,7 @@ export default function Sidebar() {
     <aside className="hidden h-full flex-col justify-between border p-5 sm:flex">
       <div className="flex flex-col">
         <div className="centered flex-col gap-5">
-          <b className="text-lg font-black">Joon ParkTEST</b>
+          <b className="text-lg font-black">Joon ParkTEST2</b>
         </div>
       </div>
       <Navbar isSidebar={true} />
