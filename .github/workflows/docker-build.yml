@@ -39,8 +39,8 @@ jobs:
           script: |
             cd /var/snap/docker/portfolio
             sudo docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
-            sudo docker-compose down
             sudo docker-compose pull
+            sudo docker-compose down
             sudo docker-compose up -d
 
       - name: Completion
