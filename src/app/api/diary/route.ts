@@ -31,3 +31,19 @@ export async function POST(request: NextRequest) {
     return new NextResponse("Error in fetching diary" + error, { status: 500 });
   }
 }
+
+export async function PUT(request: NextRequest) {
+  const body: DiaryForm = await request.json();
+
+  try {
+    // connect to MongoDB and insert diary
+    await setMongoConnect();
+    const diaryCollection = client.db("myweb").collection("diary");
+    const diary = await diaryCollection.insertOne(body);
+    return new NextResponse(JSON.stringify(diary), { status: 200 });
+  } catch (error) {
+    // disconnect from MongoDB and return the result
+    await setMongoDisconnect();
+    return new NextResponse("Error in fetching diary" + error, { status: 500 });
+  }
+}

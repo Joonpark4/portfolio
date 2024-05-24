@@ -63,7 +63,10 @@ export default function DiaryCardWriting({ ...props }) {
           ></textarea>
         </div>
         <div>
-          <div className="mt-2 flex w-full justify-end gap-4">
+          <div className="mt-2 flex w-full justify-between gap-4">
+            <Button type="reset" onClick={closeModal} variant="destructive">
+              Close
+            </Button>
             <Button type="submit">Posting</Button>
           </div>
         </div>
