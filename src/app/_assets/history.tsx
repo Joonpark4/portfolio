@@ -1,9 +1,10 @@
+import Link from "next/link";
 export const History = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
       <div className="flex flex-col">
         <div className="flex items-end gap-2 border-b-8 border-muted-foreground p-1">
-          <span className="text-xl">StarShell Studio</span>
+          <span className="text-xl font-bold">StarShell Studio</span>
           <span className="text-sm">FE Developer</span>
         </div>
         <div className="flex flex-col gap-1 p-2 text-sm">
@@ -15,7 +16,7 @@ export const History = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex items-end gap-2 border-b-8 border-muted-foreground p-1">
-          <span className="text-xl">NI Marketing</span>
+          <span className="text-xl font-bold">NI Marketing</span>
           <span className="text-sm">FE Developer</span>
         </div>
         <div className="flex flex-col gap-1 p-2 text-sm">
@@ -27,7 +28,7 @@ export const History = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex items-end gap-2 border-b-8 border-muted-foreground p-1">
-          <span className="text-xl">NCES corp</span>
+          <span className="text-xl font-bold">NCES corp</span>
           <span className="text-sm">Game Designer</span>
         </div>
         <div className="flex flex-col gap-1 p-2 text-sm">

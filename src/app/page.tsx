@@ -26,7 +26,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex mt-6 flex flex-wrap gap-8">
+      <div className="mt-6 flex flex-wrap gap-8">
         <div className="flex flex-col items-start justify-start gap-4">
           <div className="flex w-64 flex-col items-start justify-start">
             <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 font-bold text-muted">
