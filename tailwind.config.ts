@@ -94,14 +94,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    plugin(function ({ addBase, theme, addComponents }) {
-      addBase({
-        h1: {
-          fontSize: theme("fontSize.3xl"),
-          fontWeight: "bold",
-          margin: theme("margin.2"),
-        },
-      });
+    plugin(function ({ addComponents }) {
       addComponents({
         ".centered": {
           display: "flex",

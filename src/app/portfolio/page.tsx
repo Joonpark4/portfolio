@@ -19,33 +19,14 @@ export default function Portfolio() {
             "Typescript",
             "Deploy/Infra : ",
             "Home Server (Ubuntu)",
-            "CSS/Style : ",
-            "TailwindCSS",
+            "CI / CD : ",
+            "Docker, Github Actions",
             "Database : ",
             "MongoDB (Docker)",
           ]}
           pageUrl="https://www.joondev.com/"
           githubUrl="https://github.com/Joonpark4/portfolio"
           image={portfolioPic}
-        />
-        <PortfolioCard
-          title="Mobile STO Webpage"
-          descriptions={[
-            "Framework : ",
-            "Next.js",
-            "Language : ",
-            "Typescript",
-            "Deploy/Infra : ",
-            "Home Server (Ubuntu)",
-            "CSS/Style : ",
-            "TailwindCSS",
-            "Library : ",
-            "shadcn/ui",
-          ]}
-          pageUrl="https://sto.joondev.com/"
-          githubUrl=""
-          image={stoPic}
-          repo={false}
         />
         <PortfolioCard
           title="WordsMemo Service"
@@ -66,6 +47,27 @@ export default function Portfolio() {
           pageUrl="https://wordsmemo.joondev.com/"
           githubUrl="https://github.com/Joonpark4/wordsmemo"
           image={wordsmemoPic}
+        />
+        <PortfolioCard
+          title="Mobile STO Webpage"
+          descriptions={[
+            "Framework : ",
+            "Next.js",
+            "Language : ",
+            "Typescript",
+            "Deploy/Infra : ",
+            "Home Server (Ubuntu)",
+            "CSS/Style : ",
+            "TailwindCSS",
+            "Library : ",
+            "shadcn/ui",
+            "Global State : ",
+            "Zustand"
+          ]}
+          pageUrl="https://sto.joondev.com/"
+          githubUrl=""
+          image={stoPic}
+          repo={false}
         />
         <PortfolioCard
           title="Server Monitoring"

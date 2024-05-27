@@ -1,6 +1,6 @@
 export const MyPR = () => {
   return (
-    <div className="flex flex-col gap-6 self-stretch">
+    <div className="flex flex-col gap-6 grow h-full">
       <div className="w-full border-l-8 border-muted-foreground">
         <div className="flex flex-col gap-3 py-2 pl-4">
           <div className="flex flex-wrap items-end gap-1">
@@ -36,7 +36,7 @@ export const MyPR = () => {
             </h3>
           </div>
           <div className="flex flex-col gap-1">
-            <p>자사 웹을 웹빌더에서 Next.js로 리뉴얼 후 로딩 속도 760% 증가</p>
+            <p>Cafe24에서 Vercel+Next.js로 리뉴얼 후 LCP 로딩 760% 개선</p>
             <p>{`칸반 보드, 캘린더로 애자일한 협업 환경 구축(with 노션)`}</p>
             <p>6개월간 20개 이상 기획서 작성 후 직접 자사 서비스 개선</p>
           </div>

@@ -36,7 +36,7 @@ export default function RootLayout({
           <Header />
           <Sidebar />
           <Modal />
-          <main className="relative h-full w-full max-w-[1200px] flex-1 overflow-hidden overflow-y-auto p-10 sm:border">
+          <main className="relative h-full w-full max-w-[1300px] flex-1 overflow-hidden overflow-y-auto p-3 sm:p-6 md:p-10 sm:border">
             {children}
           </main>
           <Footer />
