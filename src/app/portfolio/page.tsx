@@ -37,8 +37,8 @@ export default function Portfolio() {
             "Typescript",
             "Deploy/Infra : ",
             "Home Server (Ubuntu)",
-            "CSS/Style : ",
-            "TailwindCSS",
+            "Global State : ",
+            "Zustand",
             "Backend : ",
             "Strapi (Docker)",
             "Database : ",
@@ -62,7 +62,7 @@ export default function Portfolio() {
             "Library : ",
             "shadcn/ui",
             "Global State : ",
-            "Zustand"
+            "Context API",
           ]}
           pageUrl="https://sto.joondev.com/"
           githubUrl=""
