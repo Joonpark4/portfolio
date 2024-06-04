@@ -3,13 +3,12 @@ import portfolioPic from "@/../public/img/portfolio.jpg";
 import stoPic from "@/../public/img/sto.jpg";
 import wordsmemoPic from "@/../public/img/wordsmemo.jpg";
 import netdataPic from "@/../public/img/netdata.jpg";
-import hivu from "@/../public/img/hivu.jpg";
+import namdalnriyouPic from "@/../public/img/namdalnriyou.png";
 
 export default function Portfolio() {
   return (
     <section className="flex justify-center">
       <div className="flex flex-wrap justify-start gap-3">
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-3"> */}
         <PortfolioCard
           title="Portfolio Webpage"
           descriptions={[
@@ -27,6 +26,26 @@ export default function Portfolio() {
           pageUrl="https://www.joondev.com/"
           githubUrl="https://github.com/Joonpark4/portfolio"
           image={portfolioPic}
+        />
+        <PortfolioCard
+          title="Namdalnriyou Webpage"
+          descriptions={[
+            "Framework : ",
+            "Next.js",
+            "Language : ",
+            "Typescript",
+            "Deploy/Infra : ",
+            "Vercel",
+            "Analytics : ",
+            "GA4/GTM",
+            "External API : ",
+            "Naver Map API",
+            "Advertisement : ",
+            "Google Ads",
+          ]}
+          pageUrl="https://wordsmemo.joondev.com/"
+          githubUrl="https://github.com/Joonpark4/wordsmemo"
+          image={namdalnriyouPic}
         />
         <PortfolioCard
           title="WordsMemo Service"
