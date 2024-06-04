@@ -43,8 +43,8 @@ export default function Portfolio() {
             "Advertisement : ",
             "Google Ads",
           ]}
-          pageUrl="https://wordsmemo.joondev.com/"
-          githubUrl="https://github.com/Joonpark4/wordsmemo"
+          pageUrl="https://www.namdalnriyou.com/day"
+          githubUrl="https://github.com/Joonpark4/namdalnriyou"
           image={namdalnriyouPic}
         />
         <PortfolioCard
