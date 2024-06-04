@@ -1,7 +1,7 @@
-# [Web-Portfolio Page](https://joondev.com/)
+# [Web-Portfolio Page](https://www.joondev.com/)
 
-- domain : https://joondev.com/
-- Framework : Next.js [14.0.4]
+- domain : https://www.joondev.com/
+- Framework : Next.js [14.2.3]
 - Platforms : Desktop, Mobile Web (Responsive)
 - Language : Typescript
 - Published : AWS Ubuntu, Nginx
