@@ -16,4 +16,3 @@
 
 - Server : AWS Ubuntu Home Server
 - CI/CD : Github Actions
-- 
