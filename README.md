@@ -11,8 +11,7 @@
 
 - axios
 - tailwind
-- clsx
-- radix-ui
+- shardcn/ui
 - framer-motion
 - react-hook-form
 
