@@ -14,5 +14,5 @@
 
 # Deploy & CI/CD
 
-- Server : AWS Ubuntu Home Server
+- Server : Ubuntu Home Server
 - CI/CD : Github Actions
