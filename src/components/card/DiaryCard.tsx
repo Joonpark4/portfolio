@@ -33,7 +33,7 @@ export default function DiaryCard({
       <div className={cn("flex h-full flex-col justify-between text-black")}>
         <div className="flex h-full flex-col">
           <h2 className="mb-4 text-xl font-bold">{title}</h2>
-          <p className="h-full">{content}</p>
+          <div className="h-full whitespace-pre">{content}</div>
           <p className="mt-2 w-full text-end">{date}</p>
         </div>
       </div>

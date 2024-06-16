@@ -42,7 +42,7 @@ export const DiaryCardReadingComponent = ({ ...props }) => {
         </div>
         <div className="flex h-full flex-col gap-3">
           <h1 className=" text-3xl font-bold">{title}</h1>
-          <p className="h-full">{content}</p>
+          <div className="h-full whitespace-pre">{content}</div>
         </div>
         <div>
           <div className="mt-2 flex w-full justify-between gap-4">
