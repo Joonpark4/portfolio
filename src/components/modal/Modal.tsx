@@ -1,11 +1,15 @@
 "use client";
-import { useModalStore } from "@/store/modal";
+import { useModalStore, useModalKindStore } from "@/store/modal";
 import DiaryCardWriting from "../card/DiaryCardWriting";
+import { DiaryCardReadingComponent } from "../card/DiaryCardReading";
 
 export default function Modal() {
   const { isModalOpen, closeModal } = useModalStore((state) => ({
     isModalOpen: state.isModalOpen,
     closeModal: state.closeModal,
+  }));
+  const { modalKind } = useModalKindStore((state) => ({
+    modalKind: state.modalKind,
   }));
 
   return (
@@ -15,7 +19,11 @@ export default function Modal() {
           className="bg-background-opacity-60 absolute h-full w-full"
           onClick={closeModal}
         ></div>
-        <DiaryCardWriting className="z-30 h-2/3 w-4/5 max-w-[600px] sm:w-3/4 md:w-2/3 lg:w-1/2" />
+        {modalKind === "writing" ? (
+          <DiaryCardWriting className="z-30 h-2/3 w-4/5 max-w-[600px] sm:w-3/4 md:w-2/3 lg:w-1/2" />
+        ) : modalKind === "reading" ? (
+          <DiaryCardReadingComponent className="z-30 h-2/3 w-4/5 max-w-[600px] sm:w-3/4 md:w-2/3 lg:w-1/2" />
+        ) : null}
       </div>
     )
   );

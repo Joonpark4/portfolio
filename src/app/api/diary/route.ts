@@ -3,7 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 import { client, setMongoConnect, setMongoDisconnect } from "@/lib/mongodb";
 import { DiaryForm } from "@/types/Diary";
 
-export async function GET() {
+// diary 리스트 불러오기
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const query = searchParams.get("query");
+  console.log("query", query);
   try {
     // connect to MongoDB and fetch diary
     await setMongoConnect();
@@ -16,10 +20,10 @@ export async function GET() {
   }
 }
 
+// diary 작성하기
 export async function POST(request: NextRequest) {
-  const body: DiaryForm = await request.json();
-
   try {
+    const body: DiaryForm = await request.json();
     // connect to MongoDB and insert diary
     await setMongoConnect();
     const diaryCollection = client.db("myweb").collection("diary");
@@ -32,15 +36,35 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// diary 수정하기
 export async function PUT(request: NextRequest) {
-  const body: DiaryForm = await request.json();
-
   try {
+    const body: DiaryForm = await request.json();
+    const { _id, ...updateData } = body; // _id를 추출하고 나머지 데이터만 업데이트
     // connect to MongoDB and insert diary
     await setMongoConnect();
     const diaryCollection = client.db("myweb").collection("diary");
-    const diary = await diaryCollection.insertOne(body);
-    return new NextResponse(JSON.stringify(diary), { status: 200 });
+    const result = await diaryCollection.updateOne(
+      { _id: _id },
+      { $set: updateData },
+    );
+    return new NextResponse(JSON.stringify(result), { status: 200 });
+  } catch (error) {
+    // disconnect from MongoDB and return the result
+    await setMongoDisconnect();
+    return new NextResponse("Error in fetching diary" + error, { status: 500 });
+  }
+}
+
+// diary 삭제하기
+export async function DELETE(request: NextRequest) {
+  try {
+    const { _id } = await request.json();
+    // connect to MongoDB and insert diary
+    await setMongoConnect();
+    const diaryCollection = client.db("myweb").collection("diary");
+    const result = await diaryCollection.deleteOne({ _id: _id });
+    return new NextResponse(JSON.stringify(result), { status: 200 });
   } catch (error) {
     // disconnect from MongoDB and return the result
     await setMongoDisconnect();

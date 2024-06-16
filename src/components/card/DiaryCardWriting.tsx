@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useModalStore } from "@/store/modal";
+import { formatToKoreanDate } from "@/lib/formatDate";
 
 export default function DiaryCardWriting({ ...props }) {
   const [loading, setLoading] = useState(false);
@@ -23,8 +24,13 @@ export default function DiaryCardWriting({ ...props }) {
 
   const onSubmit = async (data: any) => {
     setLoading(true);
+    const date = new Date();
+    const formattedDate = formatToKoreanDate(date);
     try {
-      const res = await axios.post("/api/diary", data);
+      const res = await axios.post("/api/diary", {
+        ...data,
+        date: formattedDate,
+      });
       if (res.status === 200) {
         console.log("Success");
       } else {
@@ -47,6 +53,7 @@ export default function DiaryCardWriting({ ...props }) {
       className={cn("memo relative bg-memo p-6 shadow-diary", props.className)}
     >
       <div className="diagonal-split-bg absolute left-0 top-0 h-6 w-6"></div>
+
       <form
         className={cn("flex h-full flex-col justify-between p-2 text-black")}
         onSubmit={handleSubmit(onSubmit)}
@@ -58,13 +65,13 @@ export default function DiaryCardWriting({ ...props }) {
             {...register("title", { required: true })}
           />
           <textarea
-            className="h-full"
+            className="h-full resize-none"
             {...register("content", { required: true })}
           ></textarea>
         </div>
         <div>
           <div className="mt-2 flex w-full justify-between gap-4">
-            <Button type="reset" onClick={closeModal} variant="destructive">
+            <Button type="reset" onClick={closeModal} variant="secondary">
               Close
             </Button>
             <Button type="submit">Posting</Button>
