@@ -6,6 +6,7 @@
 - Language : Typescript
 - Database : mongoDB
 - Global State Management : Zustand
+- Server State Management : Tanstack/Query (React Query) (Yet)
 
 # Core Library / Package
 
