@@ -4,7 +4,7 @@ import ReactPic from "@/../public/img/react.svg";
 import NextPic from "@/../public/img/nextdotjs.svg";
 import TypescriptPic from "@/../public/img/typescript.svg";
 import TailwindPic from "@/../public/img/tailwindcss.svg";
-import FramerPic from "@/../public/img/framer.svg";
+import SpringPic from "@/../public/img/spring.svg";
 import GoogleAnalyticsPic from "@/../public/img/googleanalytics.svg";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -24,10 +24,18 @@ export const CoreTechStacks = () => {
       <div className="flex h-10 items-center justify-start self-stretch bg-muted-foreground pl-3 font-bold text-muted">
         CORE TECH STACKS
       </div>
-      <div className="w-full centered">
+      <div className="centered w-full">
         <div className="grid w-full max-w-96 grid-cols-3 gap-x-10 gap-y-1 px-6 py-4 text-sm *:w-full">
-          <Image src={ReactPic} alt="React" className={isDark ? "invert" : ""} />
-          <Image src={NextPic} alt="Next.js" className={isDark ? "invert" : ""} />
+          <Image
+            src={ReactPic}
+            alt="React"
+            className={isDark ? "invert" : ""}
+          />
+          <Image
+            src={NextPic}
+            alt="Next.js"
+            className={isDark ? "invert" : ""}
+          />
           <Image
             src={TypescriptPic}
             alt="Typescript"
@@ -47,13 +55,15 @@ export const CoreTechStacks = () => {
             className={cn("mt-4", isDark ? "invert" : "")}
           />
           <Image
-            src={FramerPic}
-            alt="Framer Motion"
+            src={SpringPic}
+            alt="Java Spring"
             className={cn("mt-4", isDark ? "invert" : "")}
           />
           <div className="flex justify-center text-center">Tailwind CSS</div>
-          <div className="flex justify-center text-center">Google Analytics</div>
-          <div className="flex justify-center text-center">Framer Motion</div>
+          <div className="flex justify-center text-center">
+            Google Analytics
+          </div>
+          <div className="flex justify-center text-center">Java Spring</div>
         </div>
       </div>
     </div>

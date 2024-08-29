@@ -4,11 +4,12 @@ import stoPic from "@/../public/img/sto.jpg";
 import wordsmemoPic from "@/../public/img/wordsmemo.jpg";
 import netdataPic from "@/../public/img/netdata.jpg";
 import namdalnriyouPic from "@/../public/img/namdalnriyou.png";
+import bassPic from "@/../public/img/bass.png";
 
 export default function Portfolio() {
   return (
     <section className="flex justify-center">
-      <div className="flex flex-wrap justify-start gap-3">
+      <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
         <PortfolioCard
           title="Portfolio Webpage"
           descriptions={[
@@ -102,6 +103,22 @@ export default function Portfolio() {
           githubUrl=""
           image={netdataPic}
           repo={false}
+        />
+        <PortfolioCard
+          title="Simple Bass Note Game"
+          descriptions={[
+            "Deploy/Infra : ",
+            "Vercel",
+            "Language : ",
+            "Typescript",
+            "Styling : ",
+            "TailwindCSS",
+            "Global State : ",
+            "Zustand",
+          ]}
+          pageUrl="https://bass.joondev.com/"
+          githubUrl="https://github.com/Joonpark4/bass-practice"
+          image={bassPic}
         />
       </div>
     </section>
