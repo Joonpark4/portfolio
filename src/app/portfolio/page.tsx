@@ -115,6 +115,8 @@ export default function Portfolio() {
             "TailwindCSS",
             "Global State : ",
             "Zustand",
+            "Analytics : ",
+            "Vercel Analytics",
           ]}
           pageUrl="https://bass.joondev.com/"
           githubUrl="https://github.com/Joonpark4/bass-practice"
