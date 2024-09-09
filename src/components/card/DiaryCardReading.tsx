@@ -8,7 +8,6 @@ export const DiaryCardReadingComponent = ({ ...props }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { closeModal } = useModalStore((state) => ({
-    isModalOpen: state.isModalOpen,
     closeModal: state.closeModal,
   }));
 
