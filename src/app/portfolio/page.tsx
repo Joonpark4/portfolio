@@ -48,7 +48,7 @@ export default function Portfolio() {
           githubUrl="https://github.com/Joonpark4/namdalnriyou"
           image={namdalnriyouPic}
         />
-        <PortfolioCard
+        {/* <PortfolioCard
           title="WordsMemo Service"
           descriptions={[
             "Framework : ",
@@ -67,7 +67,7 @@ export default function Portfolio() {
           pageUrl="https://wordsmemo.joondev.com/"
           githubUrl="https://github.com/Joonpark4/wordsmemo"
           image={wordsmemoPic}
-        />
+        /> */}
         <PortfolioCard
           title="Mobile STO Webpage"
           descriptions={[
