@@ -29,6 +29,12 @@ export default function DiaryCard({
     // openModal(); // 일단 모달을 열지 않고 리스트 페이지를 읽기 페이지로 간주
   };
 
+  const handleEditDiary = () => {
+    setModalKind("editing");
+    setModalId(id.toString());
+    openModal();
+  };
+
   const onSubmit = async (data: ObjectId) => {
     setLoading(true);
     try {
@@ -58,7 +64,6 @@ export default function DiaryCard({
   return (
     <div
       className={cn("memo relative bg-memo p-6 shadow-diary", props.className)}
-      onClick={handleReadDiary}
     >
       <div className="diagonal-split-bg absolute left-0 top-0 h-6 w-6"></div>
       <div className={cn("flex h-full flex-col justify-between text-black")}>
@@ -71,6 +76,7 @@ export default function DiaryCard({
               <span
                 className="centered h-7 w-7 cursor-pointer rounded-md border border-green-300 bg-green-300 shadow-sm"
                 title="수정"
+                onClick={() => handleEditDiary()}
               >
                 🛠️
               </span>

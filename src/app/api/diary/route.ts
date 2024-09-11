@@ -14,7 +14,6 @@ export async function GET(request: NextRequest) {
     await setMongoConnect();
     const diaryCollection = client.db("myweb").collection("diary");
     const diary = await diaryCollection.find().toArray();
-    console.log("diary", diary);
     return new NextResponse(JSON.stringify(diary), { status: 200 });
   } catch (error) {
     // await setMongoDisconnect();
@@ -41,13 +40,15 @@ export async function POST(request: NextRequest) {
 // diary 수정하기
 export async function PUT(request: NextRequest) {
   try {
-    const body: DiaryForm = await request.json();
+    const body = await request.json();
     const { _id, ...updateData } = body; // _id를 추출하고 나머지 데이터만 업데이트
+    const objectId = new ObjectId(_id);
+    console.log(updateData);
     // connect to MongoDB and insert diary
     await setMongoConnect();
     const diaryCollection = client.db("myweb").collection("diary");
     const result = await diaryCollection.updateOne(
-      { _id: _id },
+      { _id: objectId },
       { $set: updateData },
     );
     return new NextResponse(JSON.stringify(result), { status: 200 });
