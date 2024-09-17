@@ -15,8 +15,8 @@ export default function Portfolio() {
           descriptions={[
             "Framework : ",
             "Next.js",
-            "Language : ",
-            "Typescript",
+            "Server States : ",
+            "Tanstack Query",
             "Deploy/Infra : ",
             "Home Server (Ubuntu)",
             "CI / CD : ",
