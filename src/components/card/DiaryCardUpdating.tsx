@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useModalStore, useModalKindStore } from "@/store/modal";
 import { formatToKoreanDate } from "@/lib/formatDate";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function DiaryCardUpdating({ ...props }) {
   const [title, setTitle] = useState("");
@@ -19,6 +20,23 @@ export default function DiaryCardUpdating({ ...props }) {
   const { id } = useModalKindStore((state) => ({
     id: state.id,
   }));
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: async (data: any) => {
+      return axios.put("/api/diary", data);
+    },
+    onMutate: (variables) => {
+    },
+    onError: (error, variables, context) => {
+    },
+    onSuccess: (data, variables, context) => {
+    },
+    onSettled: (data, error, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/diary"] });
+      closeModal();
+    },
+  });
 
   useEffect(() => {
     fetch(`/api/diary/${id}`)
@@ -30,27 +48,33 @@ export default function DiaryCardUpdating({ ...props }) {
   }, [id]);
 
   const onUpdate = async () => {
-    setLoading(true);
     const date = new Date();
     const formattedDate = formatToKoreanDate(date);
-    try {
-      const res = await axios.put("/api/diary", {
-        _id: id,
-        title: title,
-        content: content,
-        date: formattedDate,
-      });
-      if (res.status === 200) {
-        console.log("Success");
-      } else {
-        console.log("Fail");
-      }
-    } catch (error) {
-      console.log("Error writing data: ", error);
-    } finally {
-      closeModal();
-      setLoading(false);
-    }
+    const data = {
+      _id: id,
+      title: title,
+      content: content,
+      date: formattedDate,
+    };
+    mutation.mutate(data);
+    // try {
+    //   const res = await axios.put("/api/diary", {
+    //     _id: id,
+    //     title: title,
+    //     content: content,
+    //     date: formattedDate,
+    //   });
+    //   if (res.status === 200) {
+    //     console.log("Success");
+    //   } else {
+    //     console.log("Fail");
+    //   }
+    // } catch (error) {
+    //   console.log("Error writing data: ", error);
+    // } finally {
+    //   closeModal();
+    //   setLoading(false);
+    // }
   };
 
   if (loading) {

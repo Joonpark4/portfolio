@@ -18,4 +18,5 @@ export interface DiaryForm {
   title: string;
   content: string;
   _id?: ObjectId | undefined;
+  date?: string;
 }

@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
 import Modal from "@/components/modal/Modal";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import TanstackProvider from "@/providers/TanstackProvider";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -33,13 +34,15 @@ export default function RootLayout({
           defaultTheme="light"
           enableSystem={false}
         >
-          <Header />
-          <Sidebar />
-          <Modal />
-          <main className="relative h-full w-full max-w-[1300px] flex-1 overflow-hidden overflow-y-auto p-3 sm:p-6 md:p-10 sm:border">
-            {children}
-          </main>
-          <Footer />
+          <TanstackProvider>
+            <Header />
+            <Sidebar />
+            <Modal />
+            <main className="relative h-full w-full max-w-[1300px] flex-1 overflow-hidden overflow-y-auto p-3 sm:border sm:p-6 md:p-10">
+              {children}
+            </main>
+            <Footer />
+          </TanstackProvider>
         </ThemeProvider>
         <GoogleAnalytics gaId="G-240CRYK9QZ" />
       </body>

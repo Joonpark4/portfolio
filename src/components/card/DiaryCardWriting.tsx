@@ -6,15 +6,31 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useModalStore } from "@/store/modal";
 import { formatToKoreanDate } from "@/lib/formatDate";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function DiaryCardWriting({ ...props }) {
-  const [loading, setLoading] = useState(false);
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation<any>({
+    mutationFn: async (newMemo: any) => {
+      return axios.post("/api/diary", newMemo);
+    },
+    onMutate: (variables) => {
+    },
+    onError: (error, variables, context) => {
+    },
+    onSuccess: (data, variables, context) => {
+    },
+    onSettled: (data, error, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/diary"] });
+      closeModal();
+    },
+  });
 
   // 작성이 끝나면 모달 닫기
   const { closeModal } = useModalStore((state) => ({
@@ -23,30 +39,10 @@ export default function DiaryCardWriting({ ...props }) {
   }));
 
   const onSubmit = async (data: any) => {
-    setLoading(true);
     const date = new Date();
     const formattedDate = formatToKoreanDate(date);
-    try {
-      const res = await axios.post("/api/diary", {
-        ...data,
-        date: formattedDate,
-      });
-      if (res.status === 200) {
-        console.log("Success");
-      } else {
-        console.log("Fail");
-      }
-    } catch (error) {
-      console.log("Error writing data: ", error);
-    } finally {
-      closeModal();
-      setLoading(false);
-    }
+    mutation.mutate({ ...data, date: formattedDate });
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div

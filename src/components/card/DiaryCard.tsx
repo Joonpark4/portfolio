@@ -5,6 +5,7 @@ import { DiaryProps } from "@/types/Diary";
 import axios from "axios";
 import { ObjectId } from "mongodb";
 import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function DiaryCard({
   title,
@@ -17,6 +18,19 @@ export default function DiaryCard({
     openModal: state.openModal,
   }));
   const [loading, setLoading] = useState(false);
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation<any>({
+    mutationFn: async (data: any) => {
+      return axios.delete("/api/diary", { data: { id: data } });
+    },
+    onMutate: (variables) => {},
+    onError: (error, variables, context) => {},
+    onSuccess: (data, variables, context) => {},
+    onSettled: (data, error, variables, context) => {
+      queryClient.invalidateQueries({ queryKey: ["/api/diary"] });
+    },
+  });
 
   const { setModalKind, setModalId } = useModalKindStore((state) => ({
     setModalKind: state.setModalKind,
@@ -35,31 +49,26 @@ export default function DiaryCard({
     openModal();
   };
 
-  const onSubmit = async (data: ObjectId) => {
-    setLoading(true);
-    try {
-      const res = await axios.delete("/api/diary", {
-        data: { id: data },
-      });
-      if (res.status === 200) {
-        console.log("Success");
-        console.log("res", res);
-      } else {
-        console.log("Fail");
-      }
-    } catch (error) {
-      console.log("Error writing data: ", error);
-    } finally {
-      setLoading(false);
-      window.location.reload();
-    }
+  const onSubmit = async (data: any) => {
+    mutation.mutate(data);
+    // setLoading(true);
+    // try {
+    //   const res = await axios.delete("/api/diary", {
+    //     data: { id: data },
+    //   });
+    //   if (res.status === 200) {
+    //     console.log("Success");
+    //     console.log("res", res);
+    //   } else {
+    //     console.log("Fail");
+    //   }
+    // } catch (error) {
+    //   console.log("Error writing data: ", error);
+    // } finally {
+    //   setLoading(false);
+    //   window.location.reload();
+    // }
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  console.log("id", id);
 
   return (
     <div
@@ -69,7 +78,7 @@ export default function DiaryCard({
       <div className={cn("flex h-full flex-col justify-between text-black")}>
         <div className="flex h-full flex-col">
           <h2 className="mb-4 text-xl font-bold">{title}</h2>
-          <div className="h-full whitespace-pre">{content}</div>
+          <div className="h-full break-all">{content}</div>
           <div className="mt-4 flex justify-between">
             <p className=" w-full text-start">{date}</p>
             <div className="flex gap-2">
