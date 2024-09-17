@@ -78,7 +78,7 @@ export default function DiaryCard({
       <div className={cn("flex h-full flex-col justify-between text-black")}>
         <div className="flex h-full flex-col">
           <h2 className="mb-4 text-xl font-bold">{title}</h2>
-          <div className="h-full break-all">{content}</div>
+          <div className="h-full whitespace-pre-line">{content}</div>
           <div className="mt-4 flex justify-between">
             <p className=" w-full text-start">{date}</p>
             <div className="flex gap-2">

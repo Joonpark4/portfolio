@@ -90,6 +90,9 @@ module.exports = {
         inside: "-3px -3px 2px rgba(0, 0, 0, 0.5)",
         diary: "4px 4px 3px rgba(0, 0, 0, 0.5)",
       },
+      whiteSpace: {
+        "pre-line": "pre-line",
+      },
     },
   },
   plugins: [
