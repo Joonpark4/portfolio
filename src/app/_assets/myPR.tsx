@@ -37,7 +37,7 @@ export const MyPR = () => {
           </div>
           <div className="flex flex-col gap-1">
             <p>Cafe24에서 Vercel+Next.js로 리뉴얼 후 LCP 로딩 760% 개선</p>
-            <p>{`칸반 보드, 캘린더로 애자일한 협업 환경 구축(with 노션)`}</p>
+            <p>더 나은 UX/DX를 위해 고객 입장에서 테스트, 기술 블로그 탐독</p>
             <p>6개월간 20개 이상 기획서 작성 후 직접 자사 서비스 개선</p>
           </div>
         </div>
